@@ -42,9 +42,10 @@ so2 = st.number_input("SO2", min_value=0.0, step=0.1)
 ozone = st.number_input("Ozone", min_value=0.0, step=0.1)
 
 if st.button("Predict AQI Bucket"):
-    features = np.array([[pm25, pm10,  no2, nh3, co, so2, o3]])
+    features = np.array([[pm25, pm10,  no2, co, so2, ozone]])
     prediction = model.predict(features)
     st.success(f"Predicted Air Quality Category: {prediction[0]}")
+
 
 
 
