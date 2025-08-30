@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 st.title("Delhi Air Quality Dashboard 🌫️")
 
 # Load dataset
-df = pd.read_csv("Delhi_Air_Quality.csv")
+df = pd.read_csv("dataset.csv")
 
 # Show raw data
 if st.checkbox("Show Raw Data"):
@@ -23,3 +23,4 @@ st.line_chart(filtered_df['PM2.5'])
 fig, ax = plt.subplots()
 filtered_df['PM2.5'].plot(kind='hist', bins=30, ax=ax)
 st.pyplot(fig)
+
