@@ -13,7 +13,7 @@ import joblib
 # --- Load dataset ---
 @st.cache_data
 def load_data():
-    df = pd.read_csv("final_dataset.csv")
+    df = pd.read_csv(r"C:\Users\athar\Downloads\dataset (1).csv")
     df['AQI_Category'] = df['AQI'].apply(lambda aqi: 'Good' if aqi<=50 else 'Satisfactory' if aqi<=100 else 'Moderate' if aqi<=200 else 'Poor' if aqi<=300 else 'Very Poor' if aqi<=400 else 'Severe')
     return df
 
@@ -82,3 +82,4 @@ if st.checkbox("Show Correlation Heatmap"):
 if st.checkbox("Show Monthly Average Pollutant Levels"):
     monthly_avg = delhi_dataset.groupby('Month')[['PM2.5','PM10','NO2','SO2','CO','Ozone']].mean()
     st.bar_chart(monthly_avg)
+
